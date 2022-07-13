@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BoutiqueController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,35 +32,14 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 
-
-Route::get('/index', function () {
-    return view('boutiques.index');
-}); 
-Route::get('/about', function () {
-    return view('boutiques.about');
-});
-Route::get('/blog-detail', function () {
-    return view('boutiques.blog-detail');
-});
-Route::get('/blog', function () {
-    return view('boutiques.blog');
-});
-Route::get('/contact', function () {
-    return view('boutiques.contact');
-});
-Route::get('/home-02', function () {
-    return view('boutiques.home-02');
-});
-Route::get('/home-03', function () {
-    return view('boutiques.home-03');
-});
-Route::get('/product-detail', function () {
-    return view('boutiques.product-detail');
-});
-Route::get('/product', function () {
-    return view('boutiques.product');
-});
-Route::get('/shoping-cart', function () {
-    return view('boutiques.shoping-cart');
-});
+Route::get('/index',[BoutiqueController::class,'index']); 
+Route::get('/about',[BoutiqueController::class,'about']); 
+Route::get('/blog',[BoutiqueController::class,'blog']); 
+Route::get('/contact',[BoutiqueController::class,'contact']); 
+Route::get('/product',[BoutiqueController::class,'product']); 
+Route::get('/blog-detail',[BoutiqueController::class,'blog_detail']); 
+Route::get('/home-02',[BoutiqueController::class,'home_02']); 
+Route::get('/home-03',[BoutiqueController::class,'home_03']); 
+Route::get('/product-detail',[BoutiqueController::class,'product_detail']); 
+Route::get('/shoping-cart',[BoutiqueController::class,'shoping_cart']); 
 //FIN MENU NAVBAR
