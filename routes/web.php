@@ -15,15 +15,19 @@ use App\Http\Controllers\BoutiqueController;
 */
 
 Route::middleware(['auth'])->group(function () {
-    //
+    Route::get('/', function () {
+        return view('dashbord/dashbord');
+    });
+    
 });
 
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
