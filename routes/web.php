@@ -15,10 +15,43 @@ use App\Http\Controllers\BoutiqueController;
 */
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/', function () {
-        return view('dashbord/index');
-    });
-    
+    Route::get('/admin', function () {
+        return view('dashboard/index');
+    })->name('/dashboard');
+    Route::get('/widget', function () {
+        return view('dashboard/widget');
+    })->name('/widget');
+    Route::get('/button', function () {
+        return view('dashboard/button');
+    })->name('/button');
+    Route::get('/typography', function () {
+        return view('dashboard/typography');
+    })->name('/typography');
+    Route::get('/element', function () {
+        return view('dashboard/element');
+    })->name('/element');
+    Route::get('/form', function () {
+        return view('dashboard/form');
+    })->name('/form');
+    Route::get('/table', function () {
+        return view('dashboard/table');
+    })->name('/table');
+    Route::get('/chart', function () {
+        return view('dashboard/chart');
+    })->name('/chart');
+
+    Route::get('/signin', function () {
+        return view('dashboard/signin');
+    })->name('/signin');
+    Route::get('/signup', function () {
+        return view('dashboard/signup');
+    })->name('/signup');
+    Route::get('/404', function () {
+        return view('dashboard/404');
+    })->name('/404');
+    Route::get('/blank', function () {
+        return view('dashboard/blank');
+    })->name('/blank');
 });
 
 
@@ -29,9 +62,9 @@ Route::middleware(['auth'])->group(function () {
 // });
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
  
 require __DIR__.'/auth.php';
 
@@ -40,7 +73,7 @@ Route::get('/index',[BoutiqueController::class,'index']);
 Route::get('/about',[BoutiqueController::class,'about']); 
 Route::get('/blog',[BoutiqueController::class,'blog']); 
 Route::get('/contact',[BoutiqueController::class,'contact']); 
-Route::get('/product',[BoutiqueController::class,'product']); 
+Route::get('/product',[BoutiqueController::class,'product'])->name('/product'); 
 Route::get('/blog-detail',[BoutiqueController::class,'blog_detail']); 
 Route::get('/home-02',[BoutiqueController::class,'home_02']); 
 Route::get('/home-03',[BoutiqueController::class,'home_03']); 
