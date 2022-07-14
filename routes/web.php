@@ -16,7 +16,7 @@ use App\Http\Controllers\BoutiqueController;
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/', function () {
-        return view('dashbord/dashbord');
+        return view('dashbord/index');
     });
     
 });
