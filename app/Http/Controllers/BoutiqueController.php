@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categorie;
 use Illuminate\Http\Request;
 
 class BoutiqueController extends Controller
 {
     public function index(){
-        return view('boutiques.index');
+        $categories=Categorie::all();
+        return view('boutiques.index',compact('categories'));
     }
     public function about(){
         return view('boutiques.about');

@@ -15,7 +15,7 @@ use App\Http\Controllers\BoutiqueController;
 */
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/admin', function () {
+    Route::get('/dashboard', function () {
         return view('dashboard/index');
     })->name('/dashboard');
     Route::get('/widget', function () {
