@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\BoutiqueController;
 
 /*
@@ -52,14 +53,15 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/blank', function () {
         return view('dashboard/blank');
     })->name('/blank');
+    Route::resource('/article',ArticleController::class); 
 });
 
 
 
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+   return view('welcome');
+ });
 
 
 // Route::get('/dashboard', function () {
@@ -80,3 +82,4 @@ Route::get('/home-03',[BoutiqueController::class,'home_03']);
 Route::get('/product-detail',[BoutiqueController::class,'product_detail']); 
 Route::get('/shoping-cart',[BoutiqueController::class,'shoping_cart']); 
 //FIN MENU NAVBAR
+

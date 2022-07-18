@@ -80,7 +80,7 @@ assets/<!DOCTYPE html>
 					<div class="menu-desktop">
 						<ul class="main-menu">
 							<li class="active-menu">
-								<a href="index.html">Home</a>
+								<a href="{{url('index')}}">Home</a>
 								<ul class="sub-menu">
 									<li><a href="{{url('index')}}">Homepage 1</a></li>
 									<li><a href="{{url('home-02')}}">Homepage 2</a></li>
@@ -646,14 +646,14 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	</div>
 
 <!--===============================================================================================-->	
-	<script src="assets/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="{{asset('assets/vendor/jquery/jquery-3.2.1.min.js')}}"></script>
 <!--===============================================================================================-->
-	<script src="assets/vendor/animsition/js/animsition.min.js"></script>
+	<script src="{{asset('assets/vendor/animsition/js/animsition.min.js')}}"></script>
 <!--===============================================================================================-->
-	<script src="assets/vendor/bootstrap/js/popper.js"></script>
-	<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="{{asset('assets/vendor/bootstrap/js/popper.js')}}"></script>
+	<script src="{{asset('assets/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
 <!--===============================================================================================-->
-	<script src="assets/vendor/select2/select2.min.js"></script>
+	<script src="{{asset('assets/vendor/select2/select2.min.js')}}"></script>
 	<script>
 		$(".js-select2").each(function(){
 			$(this).select2({
@@ -663,18 +663,18 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		})
 	</script>
 <!--===============================================================================================-->
-	<script src="assets/vendor/daterangepicker/moment.min.js"></script>
-	<script src="assets/vendor/daterangepicker/daterangepicker.js"></script>
+	<script src="{{asset('assets/vendor/daterangepicker/moment.min.js')}}"></script>
+	<script src="{{asset('assets/vendor/daterangepicker/daterangepicker.js')}}"></script>
 <!--===============================================================================================-->
-	<script src="assets/vendor/slick/slick.min.js"></script>
-	<script src="assets/js/slick-custom.js"></script>
+	<script src="{{asset('assets/vendor/slick/slick.min.js')}}"></script>
+	<script src="{{asset('assets/js/slick-custom.js')}}"></script>
 <!--===============================================================================================-->
-	<script src="assets/vendor/parallax100/parallax100.js"></script>
+	<script src="{{asset('assets/vendor/parallax100/parallax100.js')}}"></script>
 	<script>
         $('.parallax100').parallax100();
 	</script>
 <!--===============================================================================================-->
-	<script src="assets/vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
+	<script src="{{asset('assets/vendor/MagnificPopup/jquery.magnific-popup.min.js')}}"></script>
 	<script>
 		$('.gallery-lb').each(function() { // the containers for all your galleries
 			$(this).magnificPopup({
@@ -688,9 +688,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		});
 	</script>
 <!--===============================================================================================-->
-	<script src="assets/vendor/isotope/isotope.pkgd.min.js"></script>
+	<script src="{{asset('assets/vendor/isotope/isotope.pkgd.min.js')}}"></script>
 <!--===============================================================================================-->
-	<script src="assets/vendor/sweetalert/sweetalert.min.js"></script>
+	<script src="{{asset('assets/vendor/sweetalert/sweetalert.min.js')}}"></script>
 	<script>
 		$('.js-addwish-b2').on('click', function(e){
 			e.preventDefault();
@@ -728,7 +728,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	
 	</script>
 <!--===============================================================================================-->
-	<script src="assets/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+	<script src="{{asset('assets/vendor/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
 	<script>
 		$('.js-pscroll').each(function(){
 			$(this).css('position','relative');
@@ -745,7 +745,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		});
 	</script>
 <!--===============================================================================================-->
-	<script src="assets/js/main.js"></script>
+	<script src="{{asset('assets/js/main.js')}}"></script>
 
 </body>
 </html>
