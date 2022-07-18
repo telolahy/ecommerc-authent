@@ -18,6 +18,8 @@ class CreateArticlesTable extends Migration
             $table->string('nom');
             $table->integer('prix');
             $table->string('image');
+            $table->string('image1');
+            $table->string('image2');
             $table->string('size');
             $table->string('color');
             $table->foreignId('categorie_id')->constrained()->onUpdate('cascade')->onDelete('cascade');

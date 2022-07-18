@@ -21,14 +21,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="dashbord/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="dashbord/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="{{asset('dashbord/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+    <link href="{{asset('dashbord/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css')}}" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="dashbord/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('dashbord/css/bootstrap.min.css')}}" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="dashbord/css/style.css" rel="stylesheet">
+    <link href="{{asset('dashbord/css/style.css')}}" rel="stylesheet">
 </head>
 
 <body>
@@ -69,6 +69,7 @@
                         </div>
                     </div> 
                     <a href="{{route('/widget')}}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
+                    <a href="{{route('article.index')}}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Articles</a>
                     <a href="{{route('/form')}}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
                     <a href="{{route('/table')}}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
                     <a href="{{route('/chart')}}" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
@@ -166,13 +167,22 @@
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <img class="rounded-circle me-lg-2" src="dashbord/img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                            <img class="rounded-circle me-lg-2" src="{{Storage::url(Auth::user()->image)}}" alt="" style="width: 40px; height: 40px;">
                             <span class="d-none d-lg-inline-flex">{{Auth::user()->name}}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">My Profile</a>
                             <a href="#" class="dropdown-item">Settings</a>
-                            <a href="#" class="dropdown-item">Log Out</a>
+                            <a href="#" class="dropdown-item">
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <x-dropdown-link :href="route('logout')"
+                                            onclick="event.preventDefault();
+                                                        this.closest('form').submit();">
+                                        {{ __('Log Out') }}
+                                    </x-dropdown-link>
+                                </form>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -184,7 +194,7 @@
 
 
             <!-- Footer Start -->
-            <div class="container-fluid pt-4 px-4">
+            {{-- <div class="container-fluid pt-4 px-4">
                 <div class="bg-light rounded-top p-4">
                     <div class="row">
                         <div class="col-12 col-sm-6 text-center text-sm-start">
@@ -198,29 +208,29 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <!-- Footer End -->
         </div>
         <!-- Content End -->
 
 
         <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+        {{-- <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a> --}}
     </div>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="dashbord/lib/chart/chart.min.js"></script>
-    <script src="dashbord/lib/easing/easing.min.js"></script>
-    <script src="dashbord/lib/waypoints/waypoints.min.js"></script>
-    <script src="dashbord/lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="dashbord/lib/tempusdominus/js/moment.min.js"></script>
-    <script src="dashbord/lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="dashbord/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="{{asset('dashbord/lib/chart/chart.min.js')}}"></script>
+    <script src="{{asset('dashbord/lib/easing/easing.min.js')}}"></script>
+    <script src="{{asset('dashbord/lib/waypoints/waypoints.min.js')}}"></script>
+    <script src="{{asset('dashbord/lib/owlcarousel/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('dashbord/lib/tempusdominus/js/moment.min.js')}}"></script>
+    <script src="{{asset('dashbord/lib/tempusdominus/js/moment-timezone.min.js')}}"></script>
+    <script src="{{asset('dashbord/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js')}}"></script>
 
     <!-- Template Javascript -->
-    <script src="dashbord/js/main.js"></script>
+    <script src="{{asset('dashbord/js/main.js')}}"></script>
 </body>
 
 </html>

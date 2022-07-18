@@ -33,6 +33,10 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
+        $filename=time().''.$request->image->extension();
+        $path=$request->file('image')->storeAs('image',$filename,'public');
+
+
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -41,7 +45,8 @@ class RegisteredUserController extends Controller
 
         $user = User::create([
             'name' => $request->name,
-            'email' => $request->email,
+            'image' => $path,
+            'email' => $request->email, 
             'password' => Hash::make($request->password),
         ]);
 
