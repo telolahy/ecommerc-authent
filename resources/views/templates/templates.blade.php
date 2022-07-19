@@ -1,11 +1,11 @@
-assets/<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Home</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="assets/images/icons/favicon.png"/>
+	<link rel="icon" type="image/png" href="{{asset('assets/images/icons/favicon.png')}}"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/vendor/bootstrap/css/bootstrap.min.css')}}">
 <!--===============================================================================================-->
@@ -72,9 +72,9 @@ assets/<!DOCTYPE html>
 				<nav class="limiter-menu-desktop container">
 					
 					<!-- Logo desktop -->		
-					<a href="#" class="logo">
+					{{-- <a href="#" class="logo">
 						<img src="assets/images/icons/logo-01.png" alt="IMG-LOGO">
-					</a>
+					</a> --}}
 
 					<!-- Menu desktop -->
 					<div class="menu-desktop">
