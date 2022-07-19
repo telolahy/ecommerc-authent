@@ -45,7 +45,7 @@ class ArticleController extends Controller
              'nom'=>'required',
              'prix'=>'required',
              'image'=>'required',
-             'image1'=>'required',
+             'image1'=>'required', 
              'image2'=>'required',
              'size'=>'required',
              'color'=>'required',
