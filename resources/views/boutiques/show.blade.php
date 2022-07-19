@@ -11,31 +11,31 @@
 							<div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
 
 							<div class="slick3 gallery-lb">
-								<div class="item-slick3" data-thumb="assets/images/product-detail-01.jpg">
+								<div class="item-slick3" data-thumb="{{Storage::url($article->image)}}">
 									<div class="wrap-pic-w pos-relative">
-										<img src="assets/images/product-detail-01.jpg" alt="IMG-PRODUCT">
+										<img src="{{Storage::url($article->image)}}" alt="IMG-PRODUCT">
 
-										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="assets/images/product-detail-01.jpg">
+										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="{{Storage::url($article->image)}}">
 											<i class="fa fa-expand"></i>
 										</a>
 									</div>
 								</div>
 
-								<div class="item-slick3" data-thumb="assets/images/product-detail-02.jpg">
+								<div class="item-slick3" data-thumb="{{Storage::url($article->image1)}}">
 									<div class="wrap-pic-w pos-relative">
-										<img src="assets/images/product-detail-02.jpg" alt="IMG-PRODUCT">
+										<img src="{{Storage::url($article->image1)}}" alt="IMG-PRODUCT">
 
-										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="assets/images/product-detail-02.jpg">
+										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="{{Storage::url($article->image1)}}">
 											<i class="fa fa-expand"></i>
 										</a>
 									</div>
 								</div>
 
-								<div class="item-slick3" data-thumb="assets/images/product-detail-03.jpg">
+								<div class="item-slick3" data-thumb="{{Storage::url($article->image2)}}">
 									<div class="wrap-pic-w pos-relative">
-										<img src="assets/images/product-detail-03.jpg" alt="IMG-PRODUCT">
+										<img src="{{Storage::url($article->image2)}}" alt="IMG-PRODUCT">
 
-										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="assets/images/product-detail-03.jpg">
+										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="{{Storage::url($article->image2)}}">
 											<i class="fa fa-expand"></i>
 										</a>
 									</div>
@@ -48,16 +48,16 @@
 				<div class="col-md-6 col-lg-5 p-b-30">
 					<div class="p-r-50 p-t-5 p-lr-0-lg">
 						<h4 class="mtext-105 cl2 js-name-detail p-b-14">
-							{{$article->nom}}		
+							{{$article->nom}}			
 						</h4>
 
 						<span class="mtext-106 cl2">
 							{{$article->prix}} fmg
 						</span>
 
-						<p class="stext-102 cl3 p-t-23">
+						{{-- <p class="stext-102 cl3 p-t-23">
 							Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.
-						</p>
+						</p> --}}
 						
 						<!--  -->
 						<div class="p-t-33">

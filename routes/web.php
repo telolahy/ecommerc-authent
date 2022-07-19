@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Cardcontroller;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\BoutiqueController;
 
@@ -56,6 +57,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/article',ArticleController::class); 
 });
 
+//CARD
+Route::get('/card/{id}',[Cardcontroller::class,'show'])->name('card.show');
 
 
 
