@@ -23,7 +23,10 @@ class BoutiqueController extends Controller
         return view('boutiques.contact');
     }
     public function product(){
-        return view('boutiques.product');
+        $categories=Categorie::all();
+        $articles=Article::all();
+        return view('boutiques.product',compact('categories','articles'));
+        // return view('boutiques.product');
     }
 
 
@@ -42,6 +45,7 @@ class BoutiqueController extends Controller
         return view('boutiques.product-detail');
     }
     public function shoping_cart(){
-        return view('boutiques.shoping-cart');
+        $articles=Article::all();
+        return view('boutiques.shoping-cart',compact('articles'));
     }
 }
