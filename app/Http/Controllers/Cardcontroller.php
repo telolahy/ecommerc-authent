@@ -15,7 +15,7 @@ class Cardcontroller extends Controller
      */
     public function index()
     {
-        //
+        return view('boutiques.monPanier');
     }
 
     /**

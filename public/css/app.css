@@ -770,6 +770,10 @@ select {
   margin-left: 1rem;
   margin-right: 1rem;
 }
+.mx-7 {
+  margin-left: 1.75rem;
+  margin-right: 1.75rem;
+}
 .ml-3 {
   margin-left: 0.75rem;
 }

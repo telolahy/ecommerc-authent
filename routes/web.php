@@ -61,6 +61,7 @@ Route::middleware(['auth'])->group(function () {
 //CARD
 Route::get('/card/{id}',[Cardcontroller::class,'show'])->name('card.show');
 Route::post('/card/store',[Cardcontroller::class,'store'])->name('card.store');
+Route::get('/card',[Cardcontroller::class,'index'])->name('card.index');
 Route::get('/videPanier',function(){
     Cart::destroy();
     return redirect()->route('index');
