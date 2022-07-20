@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use Illuminate\Http\Request;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class Cardcontroller extends Controller
 {
@@ -35,7 +36,10 @@ class Cardcontroller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->id);
+        $articles=Article::find($request->id);
+        Cart::add($articles->id, $articles->nom, 1, $articles->prix);
+        return redirect()->route('index')->with('msg','panier ajouter');
     }
 
     /**

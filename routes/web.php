@@ -59,6 +59,7 @@ Route::middleware(['auth'])->group(function () {
 
 //CARD
 Route::get('/card/{id}',[Cardcontroller::class,'show'])->name('card.show');
+Route::post('/card/store',[Cardcontroller::class,'store'])->name('card.store');
 
 
 
@@ -74,7 +75,7 @@ Route::get('/', function () {
 require __DIR__.'/auth.php';
 
 
-Route::get('/index',[BoutiqueController::class,'index']); 
+Route::get('/index',[BoutiqueController::class,'index'])->name('index'); 
 Route::get('/about',[BoutiqueController::class,'about']); 
 Route::get('/blog',[BoutiqueController::class,'blog']); 
 Route::get('/contact',[BoutiqueController::class,'contact']); 
