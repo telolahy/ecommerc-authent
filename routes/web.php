@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Cardcontroller;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\BoutiqueController;
 
@@ -60,6 +61,11 @@ Route::middleware(['auth'])->group(function () {
 //CARD
 Route::get('/card/{id}',[Cardcontroller::class,'show'])->name('card.show');
 Route::post('/card/store',[Cardcontroller::class,'store'])->name('card.store');
+Route::get('/videPanier',function(){
+    Cart::destroy();
+    return redirect()->route('index');
+})->name('videPanier');
+
 
 
 

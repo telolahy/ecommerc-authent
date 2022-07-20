@@ -36,10 +36,17 @@ class Cardcontroller extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->id);
+        //  dd($request->quantite);
+       
+        $duplicata=Cart::search(function ($cartItem, $rowId) use ($request) {
+            return $cartItem->id == $request->id;
+        });
+        if($duplicata->isNotEmpty()){
+            return redirect()->route('index')->with('success','le produit deja ajouter au panier');
+        }
         $articles=Article::find($request->id);
-        Cart::add($articles->id, $articles->nom, 1, $articles->prix);
-        return redirect()->route('index')->with('msg','panier ajouter');
+        Cart::add($articles->id, $articles->nom, $request->quantite, $articles->prix)->associate(Article::class);
+        return redirect()->route('index')->with('success','le produit ajouter au panier');
     }
 
     /**

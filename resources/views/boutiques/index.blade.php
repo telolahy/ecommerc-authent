@@ -1,6 +1,8 @@
 @extends('templates/templates')
 @section('contenu')
 	<!-- Slider -->
+	
+	
 	<section class="section-slide">
 		<div class="wrap-slick1">
 			<div class="slick1">
@@ -78,7 +80,11 @@
 			</div>
 		</div>
 	</section>
-
+	@if (session('success'))
+		<div class=" alert alert-success ">
+			{{session('success')}}
+		</div>
+	@endif
 	<!-- Banner -->
 	<div class="sec-banner bg0 p-t-80 p-b-50">
 		<div class="container">
